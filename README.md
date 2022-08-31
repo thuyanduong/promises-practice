@@ -51,13 +51,13 @@ ourPromise.then(value => value * 2).then(value => console.log(value));
   const ourPromise = Promise.resolve(12);
   ourPromise.then(value => value * 2).then(value => value + 10);
   ```
-  + This snippet returns `34` because `Promise.resolve` returns a promise like our previous snippets and then the resolve value of `12` is manipulated by the `then()` statements.
+  + This snippet returns a Promise object with a fullfilled value of `34` because `Promise.resolve` returns a promise like our previous snippets and then the resolve value of `12` is manipulated by the `then()` statements.
 
 **6. What does the following code snippet return? What does it log? How does this differ from the question above?**
   ```javascript
   Promise.resolve(12).then(value => value * 2).then(value => console.log(value + 10))
   ```
-  + This snippet logs `34` as well. This is different because the resolution of the promise is not captured by any variable, and the `then()` statements are chained to the promise.
+  + This snippet returns a Promise object with an `undefined` fullfilled value and logs `34`. 
 
 **7. What does the following code snippet return? What does it log? How does this differ from the question above?**
   ```javascript
