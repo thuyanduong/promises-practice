@@ -40,7 +40,11 @@ createPromise(1).then(resolve => console.log(resolve))
 
   ourPromise.then(value => value * 2);
   ```
-  + This snippet logs `24` because our `then()` statement can see the `12` that is passed when the promise is fulfilled.
+  + The code returns a Promise object. It does not log anything, but the returned Promise object has a fulfilled value of `24`. If we wanted to log `24`, we would chain on another `.then`:
+ 
+```js
+ourPromise.then(value => value * 2).then(value => console.log(value));
+```
 
 **5. What does the following code snippet return? What does it log?** <br> **Note: Instead of using the `Promise` constructor to create a Promise that immediately resolves to 12, we can just use the [`Promise.resolve`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve) method.**
   ```javascript
