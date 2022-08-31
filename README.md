@@ -66,7 +66,7 @@ ourPromise.then(value => value * 2).then(value => console.log(value));
     return value + 10;
     });
   ```
-  + This code snippet first logs `34` and then returns `34`. This is different from the previous snippet because of the `return`. We might expect the snippet to return `44`, but the `log` console method did not reassign value.
+  + This code snippet first logs `34` and then returns a Promise with a fullfilled value of `34`. 
 
 **8. What does the following code snippet return? What does it log? How does this differ from the question above?**
   ```javascript
@@ -79,4 +79,4 @@ ourPromise.then(value => value * 2).then(value => console.log(value));
       return reason;
     });
   ```
-  + This snippet logs `12 is a bad number` and returns `12` because `Promise.reject` returns a rejected promise, meaning our `catch()` method is invoked. This `catch` statement first interpolates `12` into a string and logs it to the console, then, the number itself is returned.
+  + This snippet throws an error `12 is a bad number` and returns a Promise with a fullfilled value of 12`12` because `Promise.reject` returns a rejected promise, meaning our `catch()` method is invoked. This `catch` statement first interpolates `12` into a string and logs it to the console as an error.
