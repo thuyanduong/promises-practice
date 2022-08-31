@@ -29,7 +29,7 @@ Fork and clone this lab. Respond to questions in clear, concise sentences direct
   + In order to log this statement to the console, we can add a `.then()` statement to our promise that receives the data passed by `resolve` and can log it.
 
 ```js
-console.log(createPromise(1).then(resolve => console.log(resolve)))
+createPromise(1).then(resolve => console.log(resolve))
 ```
 
 **4. What does the following code snippet return? What does it log?**
