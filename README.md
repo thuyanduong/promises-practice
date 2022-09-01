@@ -9,7 +9,7 @@ Fork and clone this lab. Respond to questions in clear, concise sentences direct
   setTimeout(() => console.log('Line 2'), 1000)
   console.log('Line 3')
   ```
-  + This snippet logs `Line 1`, then `Line 3`, and finally `Line 2` after one second. This is because `setTimeout` is a asynchronous function that lets JavaScript move on to the next line of code while it waits for the correct time to execute.
+  + This snippet logs `Line 1`, then `Line 3`, and finally `Line 2` after one second. This is because `setTimeout` is an asynchronous function that lets JavaScript move on to the next line of code while it waits for the a certain amount of time as passed before executing its callback function.
 
 **2. What does the following code snippet log? Why?**
   ```javascript
