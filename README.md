@@ -79,4 +79,4 @@ ourPromise.then(value => value * 2).then(value => console.log(value));
       return reason;
     });
   ```
-  + This snippet throws an error `12 is a bad number` and returns a Promise with a fullfilled value of 12`12` because `Promise.reject` returns a rejected promise, meaning our `catch()` method is invoked. This `catch` statement first interpolates `12` into a string and logs it to the console as an error.
+  + This snippet throws an error, `12 is a bad number` and returns a Promise with a fullfilled value of `12`. `Promise.reject` returns a rejected promise, meaning our `catch()` method is invoked _instead_ of our `.then()` methods.  This `catch` statement interpolates `12` into a string and logs it to the console as an error.
