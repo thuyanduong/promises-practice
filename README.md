@@ -23,7 +23,7 @@ Fork and clone this lab. Respond to questions in clear, concise sentences direct
 
   console.log(createPromise(1))
   ```
-  + This snippet does not log text to the console. This occurs because `createPromise` returns a promise object that after its resolved, after `setTimeout` runs, but doesn't do much in its `resolve` condition.
+  + This snippet does not log text to the console. This is because `createPromise` returns a promise object. The Promise object is resolved after `setTimeout` runs, but we have not programmed it to do anything once that promise _is_ resolved.
 
 **3. How do we use our `createPromise` function to log `"After 1 second(s), this promise is resolved."`**
   + In order to log this statement to the console, we can add a `.then()` statement to our promise that receives the data passed by `resolve` and can log it.
