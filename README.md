@@ -46,18 +46,18 @@ createPromise(1).then(resolve => console.log(resolve))
 ourPromise.then(value => value * 2).then(value => console.log(value));
 ```
 
-**5. What does the following code snippet return? What does it log?** <br> **Note: Instead of using the `Promise` constructor to create a Promise that immediately resolves to 12, we can just use the [`Promise.resolve`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve) method.**
+**5. What does the last line of code return? What does it log?** <br> **Note: Instead of using the `Promise` constructor to create a Promise that immediately resolves to 12, we can just use the [`Promise.resolve`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve) method.**
   ```javascript
   const ourPromise = Promise.resolve(12);
   ourPromise.then(value => value * 2).then(value => value + 10);
   ```
-  + This snippet returns a Promise object with a fullfilled value of `34` because `Promise.resolve` returns a promise like our previous snippets and then the resolve value of `12` is manipulated by the `then()` statements.
+  + No number is logged. This finale line of code returns a Promise object with a fullfilled value of `34`. Promise chainging occurs because `.then()` always returns another Promise object. Therefore, we can keep manipulating the resolved value of one promise by minpulating it in the next promise. In that case, the first resolved value of 12, get multipled by 2 in the second Promise and then 10 is added in the last Promise. 
 
 **6. What does the following code snippet return? What does it log? How does this differ from the question above?**
   ```javascript
   Promise.resolve(12).then(value => value * 2).then(value => console.log(value + 10))
   ```
-  + This snippet returns a Promise object with an `undefined` fullfilled value and logs `34`. 
+  + In the finale `.then`, the number `34` is logged, but since nothing is being _returned_ in the last callback function, the resultsing Promise has a fullfilled value of `undefined`.  
 
 **7. What does the following code snippet return? What does it log? How does this differ from the question above?**
   ```javascript
@@ -66,7 +66,7 @@ ourPromise.then(value => value * 2).then(value => console.log(value));
     return value + 10;
     });
   ```
-  + This code snippet first logs `34` and then returns a Promise with a fullfilled value of `34`. 
+  + This code snippet logs `34` **and** returns a Promise with a fullfilled value of `34`. 
 
 **8. What does the following code snippet return? What does it log? How does this differ from the question above?**
   ```javascript
